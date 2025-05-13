@@ -10,27 +10,33 @@ import XCTest
 
 final class Testes_UnitariosTests: XCTestCase {
 
+    private var calc: Calculadora!
+    
     override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        calc = Calculadora()
     }
 
     override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        calc = nil
     }
 
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    func testSoma(){
+        let result = calc.soma(a: 10, b: 20)
+        XCTAssertEqual(result, 30)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
+    
+    func testSub(){
+        let result = calc.sub(a: 10, b: 20)
+        XCTAssertEqual(result, -10)
     }
-
+    
+    func testMul(){
+        let result = calc.mul(a: 10, b: 20)
+        XCTAssertEqual(result, 200)
+    }
+    
+    func testDiv(){
+        let result = calc.div(a: 10, b: 20)
+        XCTAssertEqual(result, 0.5)
+    }
 }
