@@ -11,13 +11,16 @@ import XCTest
 final class Testes_UnitariosTests: XCTestCase {
 
     private var calc: Calculadora!
+    private var cadastro: Cadastro!
     
     override func setUpWithError() throws {
         calc = Calculadora()
+        cadastro = Cadastro()
     }
 
     override func tearDownWithError() throws {
         calc = nil
+        cadastro = nil
     }
 
     func testSoma(){
@@ -38,5 +41,9 @@ final class Testes_UnitariosTests: XCTestCase {
     func testDiv(){
         let result = calc.div(a: 10, b: 20)
         XCTAssertEqual(result, 0.5)
+    }
+    
+    func testExistePessoa(){
+        
     }
 }
