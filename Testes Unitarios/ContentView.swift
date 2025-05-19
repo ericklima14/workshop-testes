@@ -6,19 +6,23 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ContentView: View {
+    @Environment(\.modelContext) private var modelContext
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        let repository = TaskRepository(context: modelContext)
+        let viewModel = TaskViewModel(repository: repository)
+        
+        TaskListView(viewModel: viewModel)
     }
 }
 
 #Preview {
-    ContentView()
+    let config = ModelConfiguration(for: Task.self)
+    let container = try! ModelContainer(for: Task.self, configurations: config)
+    
+    return ContentView()
+        .modelContainer(container)
 }
