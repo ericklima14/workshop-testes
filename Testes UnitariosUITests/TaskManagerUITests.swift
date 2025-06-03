@@ -15,6 +15,10 @@ final class TaskManagerUITests: XCTestCase {
         app.launch()
     }
 
+    override func tearDownWithError() throws {
+        app.terminate()
+    }
+    
     func testAddNewTask() throws {
         app.buttons["Nova"].tap()
         let titleField = app.textFields["Título"]
@@ -26,4 +30,5 @@ final class TaskManagerUITests: XCTestCase {
         app.buttons["Salvar"].tap()
         XCTAssertTrue(app.staticTexts["Teste UI"].waitForExistence(timeout: 2))
     }
+    
 }

@@ -19,6 +19,7 @@ struct ContentView: View {
     }
 }
 
+
 #Preview {
     let config = ModelConfiguration(for: Task.self)
     let container = try! ModelContainer(for: Task.self, configurations: config)

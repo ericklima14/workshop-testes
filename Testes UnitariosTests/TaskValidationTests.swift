@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import TaskManager
+@testable import Testes_Unitarios
 
 final class TaskValidationTests: XCTestCase {
     func testTaskHasTitle() {
@@ -15,7 +15,7 @@ final class TaskValidationTests: XCTestCase {
     }
 
     func testTaskDefaultsToIncomplete() {
-        let task = Task(title: "Fazer relatório", details: "", date: Date())
+        let task = Task(title: "Fazer relatório", details: "", date: Date(), isCompleted: false)
         XCTAssertFalse(task.isCompleted, "Tarefa nova deve ser incompleta por padrão")
     }
 }

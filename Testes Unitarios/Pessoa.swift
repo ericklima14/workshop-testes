@@ -16,7 +16,5 @@ class Pessoa{
         self.nome = nome
         self.idade = idade
         self.curso = curso
-    }
-    
-    
+    } 
 }

@@ -7,13 +7,14 @@
 
 import XCTest
 import SwiftData
-@testable import TaskManager
+@testable import Testes_Unitarios
 
 final class IntegrationTests: XCTestCase {
     var container: ModelContainer!
     var context: ModelContext!
     var repository: TaskRepositoryProtocol!
 
+    @MainActor
     override func setUpWithError() throws {
         container = try ModelContainer(for: Task.self, configurations: ModelConfiguration(isStoredInMemoryOnly: true))
         context = container.mainContext
