@@ -22,6 +22,7 @@ final class MockTaskRepositoryTests: XCTestCase {
     @MainActor
     func testAddTaskAddsToList() {
         XCTAssertEqual(viewModel.tasks.count, 0)
+        print("Executei o teste de adicionar na lista")
         viewModel.addTask(title: "Nova tarefa", details: "Descrição", date: Date())
         XCTAssertEqual(viewModel.tasks.count, 1)
     }

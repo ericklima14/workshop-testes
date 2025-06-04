@@ -9,21 +9,19 @@ import SwiftUI
 import SwiftData
 
 struct ContentView: View {
-    @Environment(\.modelContext) private var modelContext
+    @StateObject private var viewModel: TaskViewModel
+    
+    init(repository: TaskRepositoryProtocol){
+        _viewModel = StateObject(wrappedValue: TaskViewModel(repository: repository))
+    }
+    
     
     var body: some View {
-        let repository = TaskRepository(context: modelContext)
-        let viewModel = TaskViewModel(repository: repository)
-        
         TaskListView(viewModel: viewModel)
     }
 }
 
 
 #Preview {
-    let config = ModelConfiguration(for: Task.self)
-    let container = try! ModelContainer(for: Task.self, configurations: config)
-    
-    return ContentView()
-        .modelContainer(container)
+    ContentView(repository: MockTaskRepository())
 }
