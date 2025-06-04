@@ -2,7 +2,8 @@
 //  MockTaskRepositoryTests.swift
 //  Testes UnitariosTests
 //
-//  Created by AppleAcademy3 on 19/05/25.
+//  Created by Erick Reimberg.
+//  Created by Ruan Viana.
 //
 
 import XCTest
@@ -22,9 +23,9 @@ final class MockTaskRepositoryTests: XCTestCase {
     @MainActor
     func testAddTaskAddsToList() {
         XCTAssertEqual(viewModel.tasks.count, 0)
-        print("Executei o teste de adicionar na lista")
         viewModel.addTask(title: "Nova tarefa", details: "Descrição", date: Date())
         XCTAssertEqual(viewModel.tasks.count, 1)
+        print(" -- \nExecutei o teste de adicionar na lista.\n --")
     }
 
     @MainActor
@@ -34,5 +35,6 @@ final class MockTaskRepositoryTests: XCTestCase {
         viewModel.loadTasks()
         viewModel.toggleCompletion(task)
         XCTAssertTrue(mockRepo.tasks[0].isCompleted)
+        print(" -- \nExecutei o teste de remover na lista.\n --")
     }
 }

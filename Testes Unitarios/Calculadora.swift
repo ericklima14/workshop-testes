@@ -2,7 +2,8 @@
 //  Calculadora.swift
 //  Testes Unitarios
 //
-//  Created by AppleAcademy1 on 12/05/25.
+//  Created by Erick Reimberg.
+//  Created by Ruan Viana.
 //
 
 import Foundation

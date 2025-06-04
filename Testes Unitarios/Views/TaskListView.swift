@@ -2,15 +2,13 @@
 //  TaskListView.swift
 //  Testes Unitarios
 //
-//  Created by AppleAcademy3 on 19/05/25.
+//  Created by Erick Reimberg.
+//  Created by Ruan Viana.
 //
 
 import SwiftUI
 
-import SwiftUI
-
 struct TaskListView: View {
-    //@ObservedObject var viewModel: TaskViewModel
     @State private var showForm = false
     @StateObject var viewModel: TaskViewModel
 

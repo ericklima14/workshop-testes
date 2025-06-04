@@ -2,7 +2,8 @@
 //  TaskManagerUITests.swift
 //  Testes UnitariosUITests
 //
-//  Created by AppleAcademy3 on 19/05/25.
+//  Created by Erick Reimberg.
+//  Created by Ruan Viana.
 //
 
 import XCTest
@@ -26,40 +27,40 @@ final class TaskManagerUITests: XCTestCase {
         
         var titleField = app.textFields["Título"]
         titleField.tap()
-        titleField.typeText("Teste UI")
+        titleField.typeText("Teste UI - 1")
         
         var detailsField = app.textFields["Descrição"]
         detailsField.tap()
-        detailsField.typeText("Criar teste de interface")
+        detailsField.typeText("Criar o primeiro teste de interface.")
         
         app.buttons["Salvar"].tap()
-        XCTAssertTrue(app.staticTexts["Teste UI"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Teste UI - 1"].waitForExistence(timeout: 3))
 
         app.buttons["Nova"].tap()
         
         titleField = app.textFields["Título"]
         titleField.tap()
-        titleField.typeText("Teste UI1")
+        titleField.typeText("Teste UI - 2")
         
         detailsField = app.textFields["Descrição"]
         detailsField.tap()
-        detailsField.typeText("Criar teste de interface1")
+        detailsField.typeText("Criar o segundo teste de interface.")
         
         app.buttons["Salvar"].tap()
-        XCTAssertTrue(app.staticTexts["Teste UI"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Teste UI - 2"].waitForExistence(timeout: 3))
 
         app.buttons["Nova"].tap()
         
         titleField = app.textFields["Título"]
         titleField.tap()
-        titleField.typeText("Teste UI2")
+        titleField.typeText("Teste UI - 3")
         
         detailsField = app.textFields["Descrição"]
         detailsField.tap()
-        detailsField.typeText("Criar teste de interface2")
+        detailsField.typeText("Criar o terceiro teste de interface.")
         
         app.buttons["Salvar"].tap()
-        XCTAssertTrue(app.staticTexts["Teste UI"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["Teste UI - 3"].waitForExistence(timeout: 3))
 
     }
     
@@ -68,14 +69,14 @@ final class TaskManagerUITests: XCTestCase {
         
         let titleField = app.textFields["Título"]
         titleField.tap()
-        titleField.typeText("Teste UI")
+        titleField.typeText("WWCD25")
         
         let detailsField = app.textFields["Descrição"]
         detailsField.tap()
-        detailsField.typeText("Criar teste de interface")
+        detailsField.typeText("Assistir o WWDC25.")
         
         app.buttons["Salvar"].tap()
-        XCTAssertTrue(app.staticTexts["Teste UI"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["WWCD25"].waitForExistence(timeout: 3))
     }
     
     func testAddNewTask3() throws {
@@ -83,13 +84,14 @@ final class TaskManagerUITests: XCTestCase {
         
         let titleField = app.textFields["Título"]
         titleField.tap()
-        titleField.typeText("Teste UI")
+        titleField.typeText("English Talk")
         
         let detailsField = app.textFields["Descrição"]
         detailsField.tap()
-        detailsField.typeText("Criar teste de interface")
+        detailsField.typeText("Participar do English Talk com a Maria.")
         
         app.buttons["Salvar"].tap()
-        XCTAssertTrue(app.staticTexts["Teste UI"].waitForExistence(timeout: 2))
+        XCTAssertTrue(app.staticTexts["English Talk"].waitForExistence(timeout: 3))
     }
+
 }

@@ -2,7 +2,8 @@
 //  IntegrationTests.swift
 //  Testes UnitariosTests
 //
-//  Created by AppleAcademy3 on 19/05/25.
+//  Created by Erick Reimberg.
+//  Created by Ruan Viana.
 //
 
 import XCTest
@@ -26,6 +27,7 @@ final class IntegrationTests: XCTestCase {
         repository.addTask(newTask)
         let tasks = repository.fetchTasks()
         XCTAssertEqual(tasks.count, 1)
+        print(" -- \nExecutei o teste de integração salvando uma tarefa na lista.\n --")
     }
 
     func testDeleteTaskRemovesFromStore() {
@@ -33,6 +35,7 @@ final class IntegrationTests: XCTestCase {
         repository.addTask(task)
         repository.deleteTask(task)
         XCTAssertEqual(repository.fetchTasks().count, 0)
+        print(" -- \nExecutei o teste de integração removendo uma tarefa na lista.\n --")
     }
 }
 

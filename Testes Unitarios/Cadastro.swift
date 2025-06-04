@@ -2,7 +2,8 @@
 //  Cadastro.swift
 //  Testes Unitarios
 //
-//  Created by AppleAcademy2 on 13/05/25.
+//  Created by Erick Reimberg.
+//  Created by Ruan Viana.
 //
 
 import Foundation
