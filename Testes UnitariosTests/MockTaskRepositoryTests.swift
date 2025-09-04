@@ -35,6 +35,6 @@ final class MockTaskRepositoryTests: XCTestCase {
         viewModel.loadTasks()
         viewModel.toggleCompletion(task)
         XCTAssertTrue(mockRepo.tasks[0].isCompleted)
-        print(" -- \nExecutei o teste de remover na lista.\n --")
+        print(" -- \nExecutei o teste de marcar uma tarefa como completa.\n --")
     }
 }
